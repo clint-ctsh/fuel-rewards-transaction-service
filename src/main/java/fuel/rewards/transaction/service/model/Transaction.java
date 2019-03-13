@@ -47,4 +47,14 @@ public class Transaction {
     public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id=" + id +
+                ", date=" + date +
+                ", amount=" + amount +
+                ", cardNumber='" + cardNumber + '\'' +
+                '}';
+    }
 }
