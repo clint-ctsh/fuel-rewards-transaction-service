@@ -17,21 +17,22 @@ public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
+    @CrossOrigin
     @GetMapping("/api/transactions")
-    public List<Transaction> getAllTransactions(){
+    public List<Transaction> getAllTransactions() {
         return transactionService.getAllTransactions();
     }
 
 
-
-//    format of post body
+    //    format of post body
 //    {
 //        "date": "yyyy-mm-dd",
 //        "amount": 20.01,
 //        "cardNumber": "asdas1234"
 //    }
+    @CrossOrigin
     @PostMapping("/api/transaction")
-    public ResponseEntity addTransaction(@RequestBody Transaction transaction){
+    public ResponseEntity addTransaction(@RequestBody Transaction transaction) {
 
         transactionService.addTransaction(transaction);
 
