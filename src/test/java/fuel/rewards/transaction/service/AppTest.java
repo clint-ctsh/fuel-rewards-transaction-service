@@ -4,7 +4,8 @@
 package fuel.rewards.transaction.service;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertNotNull;
 
 public class AppTest {
     @Test public void testAppHasAGreeting() {
