@@ -18,6 +18,10 @@ public class TransactionService {
         return (List<Transaction>) transactionRepository.findAll();
     }
 
+    public List<Transaction> getAllTransactions(String cardNumber) {
+        return (List<Transaction>) transactionRepository.findAllByCardNumber(cardNumber);
+    }
+
     public Transaction addTransaction(Transaction transaction) {
         return transactionRepository.save(transaction);
     }

@@ -19,6 +19,12 @@ public class TransactionController {
 
     @CrossOrigin
     @GetMapping("/api/transactions")
+    public List<Transaction> getAllTransactionsForUser(String cardNumber) {
+        return transactionService.getAllTransactions(cardNumber);
+    }
+
+    @CrossOrigin
+    @GetMapping("/api/transactions/all")
     public List<Transaction> getAllTransactions() {
         return transactionService.getAllTransactions();
     }
@@ -37,7 +43,7 @@ public class TransactionController {
         Transaction transaction = new Transaction();
         transaction.setName(addTransactionForm.getName());
         transaction.setAmount(addTransactionForm.getAmount());
-        transaction.setCardNumber("test-card-number");
+        transaction.setCardNumber(addTransactionForm.getCardNumber());
         transaction.setDate(new Date(System.currentTimeMillis())); // always default to current date
 
         return ResponseEntity.ok( transactionService.addTransaction(transaction));

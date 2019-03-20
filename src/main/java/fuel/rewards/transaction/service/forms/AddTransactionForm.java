@@ -9,11 +9,15 @@ public class AddTransactionForm {
     @NotBlank
     private Double amount;
 
+    @NotBlank
+    private String cardNumber;
+
     public AddTransactionForm() {}
 
-    public AddTransactionForm(@NotBlank String name, @NotBlank Double amount) {
+    public AddTransactionForm(@NotBlank String name, @NotBlank Double amount, @NotBlank String cardNumber) {
         this.name = name;
         this.amount = amount;
+        this.cardNumber = cardNumber;
     }
 
     public String getName() {
@@ -30,5 +34,13 @@ public class AddTransactionForm {
 
     public void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 }
